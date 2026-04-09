@@ -33,7 +33,10 @@ def main():
         else:
             draws += 1
 
-        print(f"あなた: {player}  コンピュータ: {computer}  → {result}")
+        if result == "あいこ":
+            print(f"あなた: {player}  コンピュータ: {computer}  → あいこ！もう一回！")
+        else:
+            print(f"あなた: {player}  コンピュータ: {computer}  → {result}")
         print(f"スコア: {wins}勝 {losses}敗 {draws}引き分け\n")
 
     print(f"\n最終結果: {wins}勝 {losses}敗 {draws}引き分け")
