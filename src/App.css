@@ -1,0 +1,234 @@
+.container {
+  width: min(480px, 95vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* スコアボード */
+.scoreboard {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.score-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 8px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.score-item.win  { border-color: rgba(74, 222, 128, 0.4); background: rgba(74, 222, 128, 0.1); }
+.score-item.lose { border-color: rgba(248, 113, 113, 0.4); background: rgba(248, 113, 113, 0.1); }
+.score-item.draw { border-color: rgba(251, 191, 36, 0.4); background: rgba(251, 191, 36, 0.1); }
+
+.score-label {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.score-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-item.win  .score-value { color: #4ade80; }
+.score-item.lose .score-value { color: #f87171; }
+.score-item.draw .score-value { color: #fbbf24; }
+.score-item.total .score-value { color: #e2e8f0; }
+
+/* 対戦エリア */
+.battle-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.hand-display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 130px;
+  justify-content: center;
+}
+
+.hand-label {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.hand-emoji {
+  font-size: 3rem;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.hand-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  min-height: 1.2em;
+}
+
+.vs-badge {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
+}
+
+/* シェイクアニメーション */
+@keyframes shake {
+  0%   { transform: translateY(0); }
+  20%  { transform: translateY(-8px); }
+  40%  { transform: translateY(4px); }
+  60%  { transform: translateY(-6px); }
+  80%  { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+.shake {
+  animation: shake 0.6s ease-in-out;
+}
+
+/* 結果バナー */
+.result-banner {
+  width: 100%;
+  text-align: center;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.result-win {
+  background: rgba(74, 222, 128, 0.15);
+  border-color: rgba(74, 222, 128, 0.5);
+  color: #4ade80;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+.result-lose {
+  background: rgba(248, 113, 113, 0.15);
+  border-color: rgba(248, 113, 113, 0.5);
+  color: #f87171;
+  text-shadow: 0 0 20px rgba(248, 113, 113, 0.5);
+}
+
+.result-draw {
+  background: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.5);
+  color: #fbbf24;
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+/* 手の選択ボタン */
+.hand-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.hand-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.18s ease;
+  font-family: inherit;
+}
+
+.hand-btn:hover:not(.disabled) {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hand-btn:active:not(.disabled) {
+  transform: translateY(0);
+}
+
+.hand-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.btn-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* リセットボタン */
+.reset-btn {
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.18s ease;
+  letter-spacing: 0.04em;
+}
+
+.reset-btn:hover {
+  border-color: rgba(248, 113, 113, 0.5);
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.08);
+}
